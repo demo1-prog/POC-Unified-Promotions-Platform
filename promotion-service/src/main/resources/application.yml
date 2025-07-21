@@ -1,0 +1,32 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /promotion
+
+spring:
+  application:
+    name: promotion-service
+
+  main:
+    web-application-type: reactive
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: upp-db
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.niks: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
