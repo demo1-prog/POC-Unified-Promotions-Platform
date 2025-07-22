@@ -1,5 +1,6 @@
 package com.niks.promotion.service;
 
+import com.niks.common.model.PromotionResponse;
 import com.niks.promotion.repository.PromotionRepository;
 import org.springframework.stereotype.Service;
 import com.niks.promotion.model.Promotion;
@@ -37,5 +38,13 @@ public class PromotionService {
 
     public Mono<Void> deletePromotion(String id) {
         return promotionRepository.deleteById(id);
+    }
+
+    public Flux<PromotionResponse> getPromotionsByEventId(String eventId) {
+        return promotionRepository.findByEventId(eventId)
+                .map(promo -> new PromotionResponse(
+                        String.valueOf(promo.getPromotionId()),
+                        promo.getPromotionType()
+                ));
     }
 }

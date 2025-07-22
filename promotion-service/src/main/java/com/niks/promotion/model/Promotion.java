@@ -15,7 +15,7 @@ public class Promotion {
     private String promotionType;
     private LocalDate promoStartDate;
     private LocalDate promoEndDate;
-    private Long eventId;
+    private String eventId;
     private Double promoAmount;
     private Integer itemLimit;
     private Integer minQuantity;
@@ -25,7 +25,7 @@ public class Promotion {
     }
 
     public Promotion(String id, Long promotionId, String promotionType, LocalDate promoStartDate, LocalDate promoEndDate,
-                     Long eventId, Double promoAmount, Integer itemLimit, Integer minQuantity, List<String> divisionIds) {
+                     String eventId, Double promoAmount, Integer itemLimit, Integer minQuantity, List<String> divisionIds) {
         this.id = id;
         this.promotionId = promotionId;
         this.promotionType = promotionType;
@@ -78,11 +78,11 @@ public class Promotion {
         this.promoEndDate = promoEndDate;
     }
 
-    public Long getEventId() {
+    public String getEventId() {
         return eventId;
     }
 
-    public void setEventId(Long eventId) {
+    public void setEventId(String eventId) {
         this.eventId = eventId;
     }
 

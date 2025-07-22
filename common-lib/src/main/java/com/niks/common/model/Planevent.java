@@ -16,6 +16,9 @@ public class Planevent {
     private LocalDate endDate;
     private List<String> promotionIds;
 
+    private String eventType;
+    private List<String> divisionIds;
+
     public String getId() {
         return id;
     }
@@ -56,14 +59,32 @@ public class Planevent {
         this.promotionIds = promotionIds;
     }
 
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
+    public List<String> getDivisionIds() {
+        return divisionIds;
+    }
+
+    public void setDivisionIds(List<String> divisionIds) {
+        this.divisionIds = divisionIds;
+    }
+
     public Planevent() {
     }
 
-    public Planevent(String id, String name, LocalDate startDate, LocalDate endDate, List<String> promotionIds) {
+    public Planevent(String id, String name, LocalDate startDate, LocalDate endDate, List<String> promotionIds, String eventType, List<String> divisionIds) {
         this.id = id;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.promotionIds = promotionIds;
+        this.eventType = eventType;
+        this.divisionIds = divisionIds;
     }
 }

@@ -1,4 +1,4 @@
-package com.niks.planxapi.model;
+package com.niks.common.model;
 
 public class PromotionResponse {
 

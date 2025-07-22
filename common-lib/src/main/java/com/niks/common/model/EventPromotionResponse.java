@@ -1,4 +1,4 @@
-package com.niks.planxapi.model;
+package com.niks.common.model;
 
 import java.util.List;
 

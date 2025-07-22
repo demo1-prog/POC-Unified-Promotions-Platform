@@ -1,5 +1,6 @@
 package com.niks.promotion.controller;
 
+import com.niks.common.model.PromotionResponse;
 import com.niks.promotion.service.PromotionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +43,10 @@ public class PromotionController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Mono<Void> deletePromotion(@PathVariable String id) {
         return promotionService.deletePromotion(id);
+    }
+
+    @GetMapping("/by-event/{eventId}")
+    public Flux<PromotionResponse> getPromotionsByEvent(@PathVariable String eventId) {
+        return promotionService.getPromotionsByEventId(eventId);
     }
 }
