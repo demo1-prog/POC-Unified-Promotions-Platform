@@ -1,48 +1,44 @@
 package com.niks.common.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.List;
 
 @Document(collection = "planProductGroups")
 public class PlanProductGroup {
 
-    @Id
-    private String id;
-    private String planProductGroupName;
-    private List<String> divisionIds;
+    private String groupId;
+    private String groupName;
+    private String description;
 
     public PlanProductGroup() {
     }
 
-    public PlanProductGroup(String id, String planProductGroupName, List<String> divisionIds) {
-        this.id = id;
-        this.planProductGroupName = planProductGroupName;
-        this.divisionIds = divisionIds;
+    public PlanProductGroup(String groupId, String groupName, String description) {
+        this.groupId = groupId;
+        this.groupName = groupName;
+        this.description = description;
     }
 
-    public String getId() {
-        return id;
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
-    public String getPlanProductGroupName() {
-        return planProductGroupName;
+    public String getGroupName() {
+        return groupName;
     }
 
-    public void setPlanProductGroupName(String planProductGroupName) {
-        this.planProductGroupName = planProductGroupName;
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
-    public List<String> getDivisionIds() {
-        return divisionIds;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDivisionIds(List<String> divisionIds) {
-        this.divisionIds = divisionIds;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
