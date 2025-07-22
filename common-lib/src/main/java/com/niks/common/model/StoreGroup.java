@@ -1,44 +1,48 @@
 package com.niks.common.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 @Document(collection = "storeGroups")
 public class StoreGroup {
 
-    private String groupId;
-    private String location;
-    private String region;
-
-    public String getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public StoreGroup(String groupId, String location, String region) {
-        this.groupId = groupId;
-        this.location = location;
-        this.region = region;
-    }
+    @Id
+    private String id;
+    private String storeGroupName;
+    private List<String> divisionIds;
 
     public StoreGroup() {
+    }
+
+    public StoreGroup(String id, String storeGroupName, List<String> divisionIds) {
+        this.id = id;
+        this.storeGroupName = storeGroupName;
+        this.divisionIds = divisionIds;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getStoreGroupName() {
+        return storeGroupName;
+    }
+
+    public void setStoreGroupName(String storeGroupName) {
+        this.storeGroupName = storeGroupName;
+    }
+
+    public List<String> getDivisionIds() {
+        return divisionIds;
+    }
+
+    public void setDivisionIds(List<String> divisionIds) {
+        this.divisionIds = divisionIds;
     }
 }
